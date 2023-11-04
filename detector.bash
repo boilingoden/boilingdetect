@@ -14,6 +14,8 @@ cyan="\033[0;36m"
 gray="\033[0;37m"
 clear="\033[0m"
 
+detectValue=30
+
 function median() {
     local data=($@)
     IFS=$'\n' sorted_data=($(sort <<<"${data[*]}"))
@@ -102,7 +104,7 @@ function clearInput() (while read -r -t 0; do read -r -t 3; done)
 function detector() {
     # tput smcup
     local chartMaxValue=33
-    local minvalue=20
+    local minvalue=37
     local alertpoint=5
     local maxarray=15
     local medianlenght=$(($maxarray - 5))
